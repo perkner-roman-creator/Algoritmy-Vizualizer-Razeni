@@ -1,0 +1,143 @@
+/* Light design tokens */
+:root {
+  --bg: #f9fafb;          /* gray-50 */
+  --text: #0f172a;        /* slate-900 */
+  --muted: #475569;       /* slate-600 */
+  --surface: #ffffff;     /* white */
+  --surface-2: #ffffff;   /* panels/cards */
+  --border: #e5e7eb;      /* gray-200 */
+  --primary: #4f46e5;     /* indigo-600 */
+  --primary-600: #4338ca;
+
+  /* bars */
+  --bar: #2563eb;         /* blue-600 */
+  --bar-compare: #ea580c; /* orange-600 */
+  --bar-swap: #dc2626;    /* red-600 */
+}
+
+/* Background + base typography */
+html, body {
+  background:
+    radial-gradient(900px 500px at 15% -10%, rgba(37,99,235,0.08), transparent 60%),
+    radial-gradient(900px 500px at 110% 10%, rgba(16,185,129,0.08), transparent 60%),
+    linear-gradient(180deg, #ffffff, #f9fafb 70%);
+  color: var(--text);
+}
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 800;
+  letter-spacing: .3px;
+  margin-bottom: 18px;
+}
+
+/* Panel s ovládáním */
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 8px 24px rgba(2,6,23,0.06);
+}
+
+.viz-controls label {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.viz-controls span {
+  color: var(--muted);
+  font-size: 13px;
+  background: rgba(2,6,23,0.04);
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+/* Inputs */
+.viz-controls select,
+.viz-controls input[type="range"] {
+  accent-color: var(--primary);
+}
+
+.viz-controls select {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+
+/* Tlačítka */
+.viz-controls button {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #ffffff, #f3f4f6);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform .06s ease, background .2s ease, border-color .2s ease;
+}
+.viz-controls button:hover {
+  border-color: #d1d5db;
+  background: linear-gradient(180deg, #f9fafb, #eef2f7);
+}
+.viz-controls button:active {
+  transform: translateY(1px);
+}
+.viz-controls button[title*="start"] {
+  background: linear-gradient(180deg, var(--primary), var(--primary-600));
+  color: #fff;
+  border-color: transparent;
+}
+
+/* Kontejner s grafem */
+.viz-root {
+  display: grid;
+  gap: 14px;
+}
+.viz-bars {
+  height: clamp(260px, 40vh, 420px);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.03), 0 10px 22px rgba(2,6,23,0.06);
+}
+.viz-bar {
+  border-radius: 4px 4px 0 0;
+  transition: height 60ms linear, background-color 120ms ease;
+  box-shadow: 0 1px 0 rgba(255,255,255,.35);
+}
+
+/* Zvýraznění fokusu pro klávesové zkratky */
+.viz-root:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+/* Responsivita */
+@media (max-width: 720px) {
+  #root { padding: 20px 14px 36px; }
+  .viz-controls { gap: 10px; padding: 10px 12px; }
+  .viz-controls label { font-size: 13px; }
+}
