@@ -15,7 +15,7 @@
    
 3. Otevřete http://localhost:5173
 
-Tento projekt je vizualizér řadících algoritmů, který umožňuje:
+Vizualizér řadících algoritmů, který umožňuje:
 
 -Interaktivně sledovat průběh řazení různými algoritmy (např. Bubble Sort)
 -Nastavit rychlost animace, počet prvků a sledovat statistiky (počet kroků, porovnání, přesuny)
