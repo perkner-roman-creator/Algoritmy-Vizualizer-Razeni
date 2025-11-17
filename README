@@ -15,8 +15,12 @@
    
 3. Otevřete http://localhost:5173
 
-## Funkce
+Tento projekt je vizualizér řadících algoritmů, který umožňuje:
 
-- Vizualizace řadících algoritmů (Bubble Sort, Quick Sort, ...)
-- Interaktivní nastavení vstupních dat
+-Interaktivně sledovat průběh řazení různými algoritmy (např. Bubble Sort)
+-Nastavit rychlost animace, počet prvků a sledovat statistiky (počet kroků, porovnání, přesuny)
+-Spouštět, pauzovat, resetovat a krokovat animaci řazení
+-Vizualizovat změny v poli pomocí grafického zobrazení sloupců
+-Vhodné pro výuku algoritmů a pochopení jejich principů
 
+Aplikace je postavená v TypeScriptu (React), kód algoritmů je v souboru src/algorithms/sorting.ts.
